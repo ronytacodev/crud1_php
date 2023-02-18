@@ -26,7 +26,7 @@ $row = mysqli_fetch_array($query);
 
             <div class="col-md-3">
                 <h1>Ingrese datos</h1>
-                <form action="insertar.php" method="POST">
+                <form action="insert.php" method="POST">
                     <input type="text" class="form-control mb-3" name="cod_estudiante" placeholder="Código Estudiante">
                     <input type="text" class="form-control mb-3" name="dni" placeholder="Dni">
                     <input type="text" class="form-control mb-3" name="nombres" placeholder="Nombres">
