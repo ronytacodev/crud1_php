@@ -23,6 +23,18 @@ $row = mysqli_fetch_array($query);
 </head>
 
 <body>
+    <div class="container mt-5">
+        <form action="update.php" method="POST">
+
+            <input type="hidden" name="cod_estudiante" value="<?php echo $row['cod_estudiante'] ?>">
+
+            <input type="text" class="form-control mb-3" name="dni" placeholder="Dni" value="<?php echo $row['dni'] ?>">
+            <input type="text" class="form-control mb-3" name="nombres" placeholder="Nombres" value="<?php echo $row['nombres'] ?>">
+            <input type="text" class="form-control mb-3" name="apellidos" placeholder="Apellidos" value="<?php echo $row['apellidos'] ?>">
+
+            <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
+        </form>
+    </div>
 
 </body>
 
