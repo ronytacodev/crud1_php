@@ -44,6 +44,8 @@ $row = mysqli_fetch_array($query);
                             <th>Dni</th>
                             <th>Nombres</th>
                             <th>Apellidos</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
 
