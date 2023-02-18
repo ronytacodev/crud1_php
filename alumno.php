@@ -24,7 +24,7 @@ $row = mysqli_fetch_array($query);
     <div class="container mt-5">
         <div class="row">
 
-            <div class="col md-3">
+            <div class="col-md-3">
                 <h1>Ingrese datos</h1>
                 <form action="insertar.php" method="POST">
                     <input type="text" class="form-control mb-3" name="cod_estudiante" placeholder="Código Estudiante">
@@ -36,8 +36,32 @@ $row = mysqli_fetch_array($query);
                 </form>
             </div>
 
-            <div class="col md-8">
-                <h1>Mostrar tabla</h1>
+            <div class="col-md-8">
+                <table class="table">
+                    <thead class="table-primary table-striped">
+                        <tr>
+                            <th>Código</th>
+                            <th>Dni</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php
+                        while ($row = mysqli_fetch_array($query)) {
+                        ?>
+                            <tr>
+                                <th><?php echo $row['cod_estudiante'] ?></th>
+                                <th><?php echo $row['dni'] ?></th>
+                                <th><?php echo $row['nombres'] ?></th>
+                                <th><?php echo $row['apellidos'] ?></th>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
 
         </div>
