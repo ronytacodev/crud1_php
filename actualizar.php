@@ -1,3 +1,5 @@
+<?php include("template/header.php"); ?>
+
 <?php
 include("conexion.php");
 $con = conectar();
@@ -10,32 +12,21 @@ $query = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($query);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<!-- INICIO LANDING PAGE ACTUALIZAR -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar</title>
-    <!-- BOOTSTRAP v5.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-</head>
+<div class="container mt-5">
+    <form action="update.php" method="POST">
 
-<body>
-    <div class="container mt-5">
-        <form action="update.php" method="POST">
+        <input type="hidden" name="cod_estudiante" value="<?php echo $row['cod_estudiante'] ?>">
 
-            <input type="hidden" name="cod_estudiante" value="<?php echo $row['cod_estudiante'] ?>">
+        <input type="text" class="form-control mb-3" name="dni" placeholder="Dni" value="<?php echo $row['dni'] ?>">
+        <input type="text" class="form-control mb-3" name="nombres" placeholder="Nombres" value="<?php echo $row['nombres'] ?>">
+        <input type="text" class="form-control mb-3" name="apellidos" placeholder="Apellidos" value="<?php echo $row['apellidos'] ?>">
 
-            <input type="text" class="form-control mb-3" name="dni" placeholder="Dni" value="<?php echo $row['dni'] ?>">
-            <input type="text" class="form-control mb-3" name="nombres" placeholder="Nombres" value="<?php echo $row['nombres'] ?>">
-            <input type="text" class="form-control mb-3" name="apellidos" placeholder="Apellidos" value="<?php echo $row['apellidos'] ?>">
+        <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
+    </form>
+</div>
 
-            <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
-        </form>
-    </div>
+<!-- FIN LANDING PAGE ACTUALIZAR -->
 
-</body>
-
-</html>
+<?php include("template/footer.php"); ?>

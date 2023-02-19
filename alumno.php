@@ -10,24 +10,29 @@ $query = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($query);
 ?>
 
-<!-- FORM AND TABLE CRUD -->
-<div class="container">
+<!-- INICIO FORM AND TABLE CRUD -->
+<div class="container mt-5">
     <div class="row">
 
         <div class="col-md-3">
             <h1>Ingrese datos</h1>
+            <hr>
             <form action="insert.php" method="POST">
                 <input type="text" class="form-control mb-3" name="cod_estudiante" placeholder="Código Estudiante">
                 <input type="text" class="form-control mb-3" name="dni" placeholder="Dni">
                 <input type="text" class="form-control mb-3" name="nombres" placeholder="Nombres">
                 <input type="text" class="form-control mb-3" name="apellidos" placeholder="Apellidos">
 
-                <input type="submit" class="btn btn-primary">
+                <input type="submit" class="btn btn-primary" value="Agregar">
             </form>
         </div>
 
+        <div class="col-md-1">
+
+        </div>
+
         <div class="col-md-8">
-            <table class="table">
+            <table class="table table-hover">
                 <thead class="table-primary table-striped">
                     <tr>
                         <th>Código</th>
@@ -67,5 +72,7 @@ $row = mysqli_fetch_array($query);
         </div>
     </div>
 </div>
+
+<!-- FIN FORM AND TABLE CRUD -->
 
 <?php include("template/footer.php"); ?>
