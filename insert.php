@@ -11,6 +11,6 @@ $sql = "INSERT INTO alumnos VALUES ('$cod_estudiante', '$dni', '$nombres', '$ape
 $query = mysqli_query($con, $sql);
 
 if ($query) {
-    Header("Location: alumno.php");
+    Header("Location: index.php");
 } else {
 }
